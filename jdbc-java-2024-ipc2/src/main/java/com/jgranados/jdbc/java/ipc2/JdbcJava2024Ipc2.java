@@ -14,7 +14,9 @@ public class JdbcJava2024Ipc2 {
         EjemploConexionMysql ejemploConexion = new EjemploConexionMysql();
         
         // ejemploConexion.guardarEstudiante();
-        ejemploConexion.consultarEstudiantes();
+        //ejemploConexion.consultarEstudiantes();
+        //ejemploConexion.procesoTransaccion();
+        ejemploConexion.consultarEstudiantesFiltrando();
         
     }
 }

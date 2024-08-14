@@ -52,9 +52,9 @@ public class EjemploConexionMysql {
         estudiante.setFechaNacimiento(scanner.nextLine());
 
         String insert = "INSERT INTO estudiante (carnet, nombre, apellidos, fecha_nacimiento) "
-                + "values('" + estudiante.getCarnet() + "','" + 
-                estudiante.getNombre() + "','" + estudiante.getApellidos() +
-                "','" + estudiante.getFechaNacimiento() + "')";
+                + "values('" + estudiante.getCarnet() + "','"
+                + estudiante.getNombre() + "','" + estudiante.getApellidos()
+                + "','" + estudiante.getFechaNacimiento() + "')";
 
         try {
 
@@ -66,26 +66,80 @@ public class EjemploConexionMysql {
             e.printStackTrace();
         }
     }
-    
+
     public void consultarEstudiantes() {
         try {
             String select = "SELECT * FROM estudiante";
             Statement statementInsert = connection.createStatement();
             ResultSet resultSet = statementInsert.executeQuery(select);
-            
+
             while (resultSet.next()) {
                 System.out.println("Datos estudiante");
                 System.out.println("Carnet: " + resultSet.getString("carnet"));
                 System.out.println("Nombre: " + resultSet.getString("nombre"));
                 System.out.println("Apellidos: " + resultSet.getString("apellidos"));
-                System.out.println("Fecha Nacimiento: " + 
-                        resultSet.getDate("fecha_nacimiento").toLocalDate());
+                System.out.println("Fecha Nacimiento: "
+                        + resultSet.getDate("fecha_nacimiento").toLocalDate());
             }
-            
+
         } catch (SQLException e) {
             System.out.println("Error al consultar a la DB");
             e.printStackTrace();
         }
+    }
+    
+    public void consultarEstudiantesFiltrando() {
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("ingrese carnet:");
+            String carnet = scanner.nextLine();
+            
+            System.out.println("ingrese apellido:");
+            String apellido = scanner.nextLine();
+            
+            String select = "SELECT * FROM estudiante where carnet = '" + carnet + 
+                    "' and apellidos like '%" + apellido + "%'";
+            Statement statementInsert = connection.createStatement();
+            ResultSet resultSet = statementInsert.executeQuery(select);
+
+            while (resultSet.next()) {
+                System.out.println("Datos estudiante");
+                System.out.println("Carnet: " + resultSet.getString("carnet"));
+                System.out.println("Nombre: " + resultSet.getString("nombre"));
+                System.out.println("Apellidos: " + resultSet.getString("apellidos"));
+                System.out.println("Fecha Nacimiento: "
+                        + resultSet.getDate("fecha_nacimiento").toLocalDate());
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al consultar a la DB");
+            e.printStackTrace();
+        }
+    }
+
+    public void procesoTransaccion() {
+        String statementUpdateStr = "update asignacion set aprobado = true where carnet_estudiante = '200954782'";
+        String statementUpdateCarnetStr = "update estudiante set carnet = '200413171' where carnet = '54125'";
+        try {
+            connection.setAutoCommit(false);
+            Statement stmtnUpdate = connection.createStatement();
+            stmtnUpdate.executeUpdate(statementUpdateStr);
+
+            Statement stmtnUpdateCarnet = connection.createStatement();
+            stmtnUpdateCarnet.executeUpdate(statementUpdateCarnetStr);
+            connection.commit();
+            connection.setAutoCommit(true);
+        } catch (SQLException e) {
+            System.out.println("Hay un error en la transaccion");
+            e.printStackTrace();
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                System.out.println("Error en rollback");
+            }
+            
+        }
+
     }
 
 }
