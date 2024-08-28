@@ -1,0 +1,22 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Aug 27, 2024, 6:21:16 PM
+    Author     : jose
+*/
+
+.border {
+    border-style: dashed;
+    border-color: blue;
+    color: blue;
+}
+
+#texto1 {
+    color: green;
+}
+
+button {
+    background: yellow;
+}
