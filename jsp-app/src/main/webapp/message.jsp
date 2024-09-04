@@ -17,10 +17,10 @@
         <p>este es un parrafo</p>
         
         
-        <form action="show-message.jsp">
+        <form method="POST" action="show-message.jsp">
             <label >Mensaje:</label>
             <input id="msjId" name="msjName" type="text"/>
-            <input id="count" name="count" type="number"/>
+            <input id="count" name="count" type="number" min="1"/>
             <button type="submit" id="btn1" name="btn1N">Procesar mensaje</button>
         </form>
         
