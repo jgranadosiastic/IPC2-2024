@@ -13,6 +13,7 @@
     </head>
     <body>
          <a href="message.jsp">ir a mensajes</a>
+         <a href="solicitudes/nueva-solicitud.jsp">crear solicitud</a>
         <%
         
         int i = 0;
