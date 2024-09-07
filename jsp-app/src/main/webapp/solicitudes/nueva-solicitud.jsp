@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Nueva solicitud</h1>
-        <form method="POST" action="/jsp-app/mvc/solicitudes/solicitudes-servlet">
+        <form method="POST" action="${pageContext.servletContext.contextPath}/mvc/solicitudes/solicitudes-servlet">
             <label for="numSolicitud">Numero de solicitud:</label>
             <input id="codigo" name="codigo"/>
             <br>

@@ -20,20 +20,24 @@ import java.io.IOException;
  */
 @WebServlet(name = "ControladorSolicitudesServlet", urlPatterns = {"/mvc/solicitudes/solicitudes-servlet"})
 public class ControladorSolicitudesServlet extends HttpServlet {
-    
-    
- 
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CreadorSolicitudes creadorSolicitudes = new CreadorSolicitudes();
         try {
             Solicitud solicitudCreada = creadorSolicitudes.crearSolicitud(req);
+
+            // para compartir un modelo y usar redirect para mostrar una vista jsp
+            /*req.getSession().setAttribute("solicitudCreada", solicitudCreada);
+            resp.sendRedirect(req.getContextPath() + "/solicitudes/crear-solicitud.jsp?codigo=" + solicitudCreada.getCodigo());*/
+
+            // para compartir un modelo y usar forward para mostrar una vista jsp
             req.setAttribute("solicitudCreada", solicitudCreada);
-            req.getSession().setAttribute("solicitudCreada", solicitudCreada);
-            resp.sendRedirect("/jsp-app/solicitudes/crear-solicitud.jsp?codigo=" + solicitudCreada.getCodigo());
+            req.getRequestDispatcher("/solicitudes/crear-solicitud.jsp")
+                    .forward(req, resp);
         } catch (UserDataInvalidException e) {
             e.printStackTrace();
         }
-        
+
     }
 }

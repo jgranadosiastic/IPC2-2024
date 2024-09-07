@@ -11,6 +11,6 @@
         <title>Solicitud Creada</title>
     </head>
     <body>
-        <h1>Solicitud creada, Codigo de solicitud: ${param.codigo} ${sessionScope.solicitudCreada}</h1>
+        <h1>Solicitud creada, Codigo de solicitud: ${param.codigo} ${sessionScope.solicitudCreada} ${solicitudCreada}</h1>
     </body>
 </html>
