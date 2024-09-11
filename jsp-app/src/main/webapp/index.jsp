@@ -10,21 +10,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <jsp:include page="/includes/resources.jsp"/>
+
     </head>
     <body>
-         <a href="message.jsp">ir a mensajes</a>
-         <a href="solicitudes/nueva-solicitud.jsp">crear solicitud</a>
+        <jsp:include page="/includes/header.jsp"/>
+        <a href="message.jsp">ir a mensajes</a>
+        <a href="solicitudes/nueva-solicitud.jsp">crear solicitud</a>
         <%
-        
-        int i = 0;
-        for (i = 0; i < 10; i++) {
+
+            int i = 0;
+            for (i = 0; i < 10; i++) {
         %>
         <h1>Hello World!</h1>
         <%}%>
         <p>este es un parrafo</p>
-        
-        
-       
-        
+
+
+
+
+        <jsp:include page="/includes/footer.jsp"/>
     </body>
 </html>

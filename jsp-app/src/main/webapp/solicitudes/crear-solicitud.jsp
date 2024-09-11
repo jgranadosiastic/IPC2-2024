@@ -9,8 +9,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Solicitud Creada</title>
+        <jsp:include page="/includes/resources.jsp"/>
     </head>
     <body>
-        <h1>Solicitud creada, Codigo de solicitud: ${param.codigo} ${sessionScope.solicitudCreada} ${solicitudCreada}</h1>
+        <jsp:include page="/includes/header.jsp"/>
+        <main>
+            <section class="section">
+                <div class="container">
+                    <h1>Solicitud creada, Codigo de solicitud: ${param.codigo} ${sessionScope.solicitudCreada} ${solicitudCreada}</h1>
+                </div>
+            </section>
+        </main>
+        <jsp:include page="/includes/footer.jsp"/>
     </body>
 </html>
