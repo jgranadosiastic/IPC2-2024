@@ -48,11 +48,11 @@ public class UploadServlet extends HttpServlet {
         System.out.println(fileContentType);
 
         try (BufferedReader in = new BufferedReader(new InputStreamReader(fileStream))) {
-            String line = in.readLine();
+            /*String line = in.readLine();
             while (line != null) {
                 System.out.println(line);
                 line = in.readLine();
-            }
+            }*/
             String filePath = PATH + "/" + fileSName;
             filePart.write(filePath);
 
