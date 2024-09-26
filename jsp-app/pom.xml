@@ -67,7 +67,12 @@
             <version>9.0.0</version>
             <scope>compile</scope>
         </dependency>
-        
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>10.1.28</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     
     <build>

@@ -16,6 +16,7 @@
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="${pageContext.servletContext.contextPath}/solicitudes/nueva-solicitud.jsp" class="nav-link" aria-current="page">Nueva Solicitud</a></li>
                 <li class="nav-item"><a href="${pageContext.servletContext.contextPath}/mvc/solicitudes/solicitudes-servlet" class="nav-link">Listado solicitudes</a></li>
+                <li class="nav-item"><a href="${pageContext.servletContext.contextPath}/solicitudes/ajax/ver-solicitudes.jsp" class="nav-link">Listado solicitudes con ajax</a></li>
                 <li class="nav-item"><a href="${pageContext.servletContext.contextPath}/files/upload-file.jsp" class="nav-link">Upload file</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">About</a></li>
