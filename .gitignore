@@ -2,3 +2,38 @@
 /static-site/nbproject/private/
 /jsp-app/target/
 /jsp-app/nb-configuration.xml
+
+
+# Global Level
+/angular-app/*.exe
+/angular-app/dist/
+/angular-app/coverage/
+/angular-app/node_modules/
+/angular-app/tmp/
+/angular-app/npm-debug.log
+/angular-app/yarn-error.log
+
+# IDE-Specific
+
+# Visual Studio Code
+/angular-app/.vscode/
+/angular-app/!.vscode/settings.json
+/angular-app/!.vscode/tasks.json
+/angular-app/!.vscode/launch.json
+/angular-app/!.vscode/extensions.json
+/angular-app/**/*.code-workspace
+
+# Angular-Specific
+/angular-app/.angular/
+/angular-app/aio/
+/angular-app/rollup-test/
+
+# Miscellaneous
+/angular-app/.notes.md
+/angular-app/.history
+/angular-app/.husky/_
+/angular-app/.bazelrc.user
+/angular-app/.ng-dev.log
+/angular-app/.ng-dev.err*.log
+/angular-app/.ng-dev.user*
+/angular-app/.eslintcache
