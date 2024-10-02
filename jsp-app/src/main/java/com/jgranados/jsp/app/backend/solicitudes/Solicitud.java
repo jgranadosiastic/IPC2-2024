@@ -4,6 +4,10 @@
  */
 package com.jgranados.jsp.app.backend.solicitudes;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import java.time.LocalDate;
 
 /**
@@ -13,6 +17,8 @@ import java.time.LocalDate;
 public class Solicitud {
     
     private String codigo;
+    @JsonSerialize(using = LocalDateSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate fecha;
     private TipoSolicitudEnum tipo;
     private String nombrePersona;
