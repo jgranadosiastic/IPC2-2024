@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './requests-list.component.css'
 })
 export class RequestsListComponent {
+  public text = "hola mundo";
+  public urlImg = "https://wallpapercave.com/wp/wp7250277.jpg";
 
 }

@@ -2,7 +2,7 @@
 /static-site/nbproject/private/
 /jsp-app/target/
 /jsp-app/nb-configuration.xml
-
+/rest-api-app/nb-configuration.xml
 
 # Global Level
 /angular-app/*.exe
@@ -37,3 +37,4 @@
 /angular-app/.ng-dev.err*.log
 /angular-app/.ng-dev.user*
 /angular-app/.eslintcache
+/rest-api-app/target/
