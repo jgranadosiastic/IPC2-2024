@@ -1,4 +1,12 @@
-<p>requests-list works asdfsdfsdfsd!</p>
-<div>   {{text}}</div>
-<img [src]="urlImg" width="100px"/>
-<input type="text" [value]="text"/>
+<div class="card" *ngFor="let solicitud of solicitudesList">
+    <div class="card-body">
+        <h5 class="card-title">{{solicitud.nombrePersona}}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{solicitud.codigo}}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{solicitud.tipo}}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{solicitud.fecha}}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{solicitud.salario}}</h6>
+        <p class="card-text">{{solicitud.direccion}}</p>
+        <a href="#" class="card-link">Editar</a>
+        <a href="#" class="card-link">Eliminar</a>
+    </div>
+</div>
