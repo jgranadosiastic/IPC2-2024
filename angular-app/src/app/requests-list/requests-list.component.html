@@ -1,4 +1,4 @@
-<div class="card" *ngFor="let solicitud of solicitudesList">
+<!--<div class="card" *ngFor="let solicitud of solicitudesList">
     <div class="card-body">
         <h5 class="card-title">{{solicitud.nombrePersona}}</h5>
         <h6 class="card-subtitle mb-2 text-body-secondary">{{solicitud.codigo}}</h6>
@@ -10,3 +10,11 @@
         <a href="#" class="card-link">Eliminar</a>
     </div>
 </div>
+-->
+<h1>Listado de solicitudes</h1>
+<div class="row">
+@for (solicitud of solicitudesList; track $index) {
+    <app-request-card [solicitud]="solicitud"></app-request-card>
+}
+</div>
+
