@@ -9,5 +9,14 @@ import jakarta.ws.rs.core.Application;
  */
 @ApplicationPath("api/v1")
 public class RestConfiguration extends Application {
-    
+
 }
+/*
+@ApplicationPath("api/v1")
+public class RestConfiguration extends ResourceConfig {
+    
+    public RestConfiguration()  {
+        packages("com.jgranados.rest.api.app.restapi").register(MultiPartFeature.class);
+    }
+    
+}*/
