@@ -1,0 +1,64 @@
+<form [formGroup]="solicitudForm" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for="numSolicitud">Numero de solicitud:</label>
+        <input id="codigo" name="codigo" class="form-control" placeholder="Numero de solicitud"
+        formControlName="codigo"
+        [class.is-invalid]="solicitudForm.controls['codigo'].invalid && solicitudForm.controls['codigo'].touched"/>
+        
+        @if (solicitudForm.controls['codigo'].invalid && solicitudForm.controls['codigo'].touched) {
+            <div class="invalid-feedback">
+            <div >
+                Por favor ingrese un codigo de solicitud valido
+            </div>
+        </div>
+        }
+    </div>
+    <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" class="form-control"
+        formControlName="fecha"/>
+    </div>
+    <div class="form-group">
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="tipo" class="form-control"
+        formControlName="tipo">
+            <option value="NACIONAL">NACIONAL</option>
+            <option value="REGIONAL">REGIONAL</option>
+            <option value="INTERNACIONAL">INTERNACIONAL</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="nombre">Nombre de la persona:</label>
+        <input id="nombre" name="nombrePersona" class="form-control"
+        [class.is-invalid]="solicitudForm.controls['nombrePersona'].invalid && solicitudForm.controls['nombrePersona'].dirty"
+        formControlName="nombrePersona"/>
+
+        @if (solicitudForm.controls['nombrePersona'].invalid && solicitudForm.controls['nombrePersona'].dirty) {
+            <div class="invalid-feedback">
+            <div >
+                Se debe ingresar un nombre con 100 caracteres como maximo
+            </div>
+        </div>
+        }
+    </div>
+    <div class="form-group">
+        <label for="salario">Salario:</label>
+        <input id="salario" name="salario" type="number" class="form-control"
+        formControlName="salario"/>
+    </div>
+    <label for="salario">Direccion:</label>
+    <input id="direccion" name="direccion" class="form-control"
+    formControlName="direccion"/>
+    <br>
+    <button class="btn btn-primary" type="button" (click)="limpiar()">Limpiar</button>
+    <button class="btn btn-success" [disabled]="solicitudForm.invalid">Crear solicitud</button>
+</form>
+
+@if (creado) {
+
+
+<div>
+    Solicitud creada con exito!!
+</div>
+
+}

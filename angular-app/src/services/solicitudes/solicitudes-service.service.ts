@@ -16,4 +16,8 @@ export class SolicitudesRestService {
   public obtenerTodasSolicitudes(): Observable<Solicitud[]> {
     return this.httpClient.get<Solicitud[]>(this.restConstants.getApiURL() + 'solicitudes' );
   }
+
+  public crearSolicitud(solicitud: Solicitud): Observable<void> {
+    return this.httpClient.post<void>(this.restConstants.API_URL + 'solicitudes', solicitud);
+  }
 }
