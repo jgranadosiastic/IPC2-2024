@@ -3,6 +3,7 @@ import { AppComponent } from './app.component';
 import { ListarSolicitudesViewComponent } from './listar-solicitudes-view/listar-solicitudes-view.component';
 import { MainComponent } from './main/main.component';
 import { RequestCreateViewComponent } from './request-create-view/request-create-view.component';
+import { FilesViewComponent } from './files-view/files-view.component';
 
 export const routes: Routes = [
     {
@@ -19,6 +20,11 @@ export const routes: Routes = [
         path: 'crear-solicitud',
         title: 'Crear Solicitud',
         component: RequestCreateViewComponent
+    },
+    {
+        path: 'archivos',
+        title: 'Archivos',
+        component: FilesViewComponent
     },
     {
         path: '',
