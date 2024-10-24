@@ -2,11 +2,13 @@
     <div class="card-body">
         <h5 class="card-title">{{solicitud.nombrePersona}}</h5>
         <h6 class="card-subtitle mb-2 text-body-secondary">{{solicitud.codigo}}</h6>
-        <h6 class="card-subtitle mb-2 text-body-secondary">{{etipoSolicitudEnum[solicitud.tipo]}}</h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{solicitud.tipo}}</h6>
         <h6 class="card-subtitle mb-2 text-body-secondary">{{solicitud.fecha | date:'yyyy-MM-dd' }}</h6>
         <h6 class="card-subtitle mb-2 text-body-secondary">{{solicitud.salario | currency:'Q'}}</h6>
         <p class="card-text">{{solicitud.direccion}}</p>
-        <a href="#" class="card-link">Editar</a>
+        @if (!soloVer) {
+        <a href="/ver-solicitud/{{solicitud.codigo}}" class="card-link">Ver</a>
         <a href="#" class="card-link">Eliminar</a>
+        }
     </div>
 </div>

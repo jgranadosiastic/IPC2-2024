@@ -1,0 +1,19 @@
+<main>
+    <section class="section">
+        <div class="container">
+            <h1>Ver solicitud</h1>
+            <div class="row">
+                @if (existe) {
+                <app-request-card [solicitud]="solicitud" [soloVer]="true"></app-request-card>
+                }
+                @else {
+
+                <div class="alert alert-danger" role="alert">
+                    No se encontro solicitud con codigo {{codigo}}
+                </div>
+                }
+
+            </div>
+        </div>
+    </section>
+</main>

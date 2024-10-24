@@ -20,4 +20,8 @@ export class SolicitudesRestService {
   public crearSolicitud(solicitud: Solicitud): Observable<void> {
     return this.httpClient.post<void>(this.restConstants.API_URL + 'solicitudes', solicitud);
   }
+
+  public obtenerSolicitud(codigo: string): Observable<Solicitud> {
+    return this.httpClient.get<Solicitud>(this.restConstants.getApiURL() + 'solicitudes' + '/' + codigo );
+  }
 }

@@ -14,6 +14,9 @@ export class RequestCardComponent {
   @Input({required: true})
   solicitud!: Solicitud;
 
+  @Input()
+  soloVer: boolean = false;
+
   etipoSolicitudEnum = TipoSolicitudEnum;
 
 }
